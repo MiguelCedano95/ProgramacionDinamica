@@ -112,8 +112,3 @@ int main() {
 
     return 0;
 }
-            cout << "Ingresa dos números: ";
-            cin >> a >> b;
-            cout << "Resultado: " << a + b << endl;
-            break;
-
