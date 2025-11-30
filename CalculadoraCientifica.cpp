@@ -44,3 +44,76 @@ int main() {
             cout << "Resultado: " << a + b << endl;
             break;
 
+        case 2:
+            cout << "\n--- RESTA ---\n";
+            cout << "Ingresa dos números: ";
+            cin >> a >> b;
+            cout << "Resultado: " << a - b << endl;
+            break;
+
+        case 3:
+            cout << "\n--- MULTIPLICACIÓN ---\n";
+            cout << "Ingresa dos números: ";
+            cin >> a >> b;
+            cout << "Resultado: " << a * b << endl;
+            break;
+
+        case 4:
+            cout << "\n--- DIVISIÓN ---\n";
+            cout << "Ingresa dos números (a / b): ";
+            cin >> a >> b;
+            if (b == 0) {
+                cout << "Error: no se puede dividir entre cero.\n";
+            } else {
+                cout << "Resultado: " << a / b << endl;
+            }
+            break;
+
+        case 5:
+            cout << "\n--- POTENCIA ---\n";
+            cout << "Ingresa la base y el exponente: ";
+            cin >> a >> b;
+            cout << "Resultado: " << pow(a, b) << endl;
+            break;
+
+        case 6:
+            cout << "\n--- RAÍZ CUADRADA ---\n";
+            cout << "Ingresa un número: ";
+            cin >> a;
+            if (a < 0) {
+                cout << "Error: no se puede sacar raíz de un número negativo.\n";
+            } else {
+                cout << "Resultado: " << sqrt(a) << endl;
+            }
+            break;
+
+        case 7: {
+            cout << "\n--- FACTORIAL ---\n";
+            int n;
+            cout << "Ingresa un número entero: ";
+            cin >> n;
+
+            if (n < 0) {
+                cout << "Error: el factorial solo se puede calcular de números no negativos.\n";
+            } else {
+                cout << "Resultado: " << factorial(n) << endl;
+            }
+            break;
+        }
+
+        case 8:
+            cout << "Saliendo...\n";
+            return 0;
+
+        default:
+            cout << "Opción no válida.\n";
+        }
+    }
+
+    return 0;
+}
+            cout << "Ingresa dos números: ";
+            cin >> a >> b;
+            cout << "Resultado: " << a + b << endl;
+            break;
+
