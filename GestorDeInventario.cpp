@@ -66,3 +66,71 @@ int main() {
             }
             break;
         }
+
+case 3: {
+            cout << "\n--- BUSCAR PRODUCTO ---\n";
+            string buscado;
+            cout << "Nombre del producto: ";
+            cin >> buscado;
+
+            bool encontrado = false;
+            for (const auto& p : inventario) {
+                if (p.nombre == buscado) {
+                    mostrarProducto(p);
+                    encontrado = true;
+                }
+            }
+
+            if (!encontrado) {
+                cout << "Producto no encontrado.\n";
+            }
+            break;
+        }
+
+        case 4: {
+            int tipo;
+            cout << "\n--- ORDENAR PRODUCTOS ---\n";
+            cout << "1. Por nombre\n";
+            cout << "2. Por precio\n";
+            cout << "3. Por cantidad\n";
+            cout << "Elige un tipo de ordenamiento: ";
+            cin >> tipo;
+
+            if (tipo == 1) {
+                sort(inventario.begin(), inventario.end(),
+                    [](const Producto& a, const Producto& b) {
+                        return a.nombre < b.nombre;
+                    });
+                cout << "Ordenados por nombre.\n";
+            }
+            else if (tipo == 2) {
+                sort(inventario.begin(), inventario.end(),
+                    [](const Producto& a, const Producto& b) {
+                        return a.precio < b.precio;
+                    });
+                cout << "Ordenados por precio.\n";
+            }
+            else if (tipo == 3) {
+                sort(inventario.begin(), inventario.end(),
+                    [](const Producto& a, const Producto& b) {
+                        return a.cantidad < b.cantidad;
+                    });
+                cout << "Ordenados por cantidad.\n";
+            }
+            else {
+                cout << "Opción inválida.\n";
+            }
+            break;
+        }
+
+        case 5:
+            cout << "Saliendo del sistema...\n";
+            return 0;
+
+        default:
+            cout << "Opción no válida.\n";
+        }
+    }
+
+    return 0;
+}
